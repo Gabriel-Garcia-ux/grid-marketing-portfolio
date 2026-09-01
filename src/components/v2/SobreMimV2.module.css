@@ -1,0 +1,94 @@
+.section {
+  padding: 4rem 2rem;
+  border-bottom: 1px solid rgba(40, 32, 24, 0.25);
+}
+
+.titleContainer {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 1.5rem;
+}
+
+.dropCapBox {
+  background-color: #14110f;
+  color: #f2e9dc;
+  font-family: 'Bodoni Moda', 'Playfair Display', serif;
+  font-size: 0.75em;
+  font-weight: 900;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 0.22em;
+  margin-right: 0.06em;
+  border-radius: 2px;
+  line-height: 1.1;
+  vertical-align: middle;
+}
+
+.sectionTitle {
+  font-family: 'Playfair Display', 'Cormorant Garamond', serif;
+  font-size: clamp(2.4rem, 4.8vw, 4rem);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: #14110f;
+  text-transform: uppercase;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+.headline {
+  font-family: 'Playfair Display', 'Cormorant Garamond', serif;
+  font-size: clamp(1.4rem, 2.5vw, 2.2rem);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: #8b261b;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+  max-width: 900px;
+  line-height: 1.25;
+}
+
+.editorialBody {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+}
+
+.column {
+  font-family: 'Cormorant Garamond', 'Georgia', serif;
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: #26201a;
+}
+
+.paragraph {
+  margin-bottom: 1.5rem;
+}
+
+.firstLetter {
+  font-family: 'Bodoni Moda', serif;
+  font-size: 3.2rem;
+  font-weight: 800;
+  float: left;
+  line-height: 0.8;
+  margin-right: 0.5rem;
+  margin-top: 0.1rem;
+  color: #14110f;
+}
+
+.highlightBox {
+  background-color: rgba(139, 38, 27, 0.06);
+  border-left: 3px solid #8b261b;
+  padding: 1.2rem 1.5rem;
+  margin-top: 1.5rem;
+  font-style: italic;
+}
+
+@media (max-width: 992px) {
+  .editorialBody {
+    grid-template-columns: 1fr;
+  }
+}

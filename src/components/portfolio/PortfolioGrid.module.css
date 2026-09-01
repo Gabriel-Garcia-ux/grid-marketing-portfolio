@@ -1,0 +1,37 @@
+/* Garantia: cards nunca ficam invisíveis por padrão (GSAP sobrescreve ao animar) */
+.cardWrapper {
+  opacity: 1;
+}
+
+.grid {
+  display: grid;
+  /* Configuração responsiva: 
+     - Mobile: 3 colunas compactas
+     - Tablet: 3 colunas normais
+     - Desktop: 4 colunas
+     - Telas muito grandes: 5 colunas
+  */
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--gutter);
+  padding: 1rem 0;
+}
+
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+@media (min-width: 1400px) {
+  .grid {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .grid {
+    gap: 0.75rem;
+  }
+}

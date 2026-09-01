@@ -1,0 +1,99 @@
+.header {
+  width: 100%;
+  padding: 1.2rem 2rem;
+  border-bottom: 1px solid rgba(40, 32, 24, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  background-color: rgba(216, 203, 184, 0.92);
+  backdrop-filter: blur(8px);
+  z-index: 100;
+}
+
+.brand {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+}
+
+.brandTitle {
+  font-family: 'Bodoni Moda', 'Playfair Display', serif;
+  font-size: 1.35rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  color: #14110f;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.brandSubtitle {
+  font-family: 'Inter Tight', sans-serif;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  color: #8b261b;
+  text-transform: uppercase;
+  margin-top: 3px;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 2.2rem;
+}
+
+.navLink {
+  font-family: 'Inter Tight', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #2b241f;
+  transition: color 0.2s ease;
+  position: relative;
+}
+
+.navLink:hover {
+  color: #8b261b;
+}
+
+.contactBadgeBtn {
+  background-color: #14110f;
+  color: #f2e9dc;
+  font-family: 'Inter Tight', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding: 0.6rem 1.4rem;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.contactBadgeBtn:hover {
+  background-color: #8b261b;
+  color: #ffffff;
+}
+
+.versionSwitch {
+  font-family: 'Inter Tight', sans-serif;
+  font-size: 0.65rem;
+  font-weight: 600;
+  color: #8b261b;
+  text-decoration: underline;
+  margin-left: 1rem;
+}
+
+@media (max-width: 992px) {
+  .nav {
+    display: none;
+  }
+}

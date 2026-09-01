@@ -1,0 +1,26 @@
+.wrapper {
+  overflow: hidden;
+  width: 100%;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  padding: 0.75rem 0;
+  background: var(--paper-dark);
+  cursor: default;
+  user-select: none;
+}
+
+.track {
+  display: flex;
+  will-change: transform;
+  width: max-content;
+}
+
+.text {
+  font-family: var(--font-interface);
+  font-size: var(--text-sm);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  white-space: nowrap;
+  padding-right: 0;
+}

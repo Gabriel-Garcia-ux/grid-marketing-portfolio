@@ -1,0 +1,73 @@
+.wrapper {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background-color: #d8cbb8;
+  background-image: 
+    radial-gradient(ellipse at center, rgba(230, 219, 202, 0.95) 0%, rgba(204, 189, 168, 0.9) 70%, rgba(165, 147, 122, 0.95) 100%),
+    url('/images/textures/paper-noise.svg');
+  background-repeat: repeat;
+  background-size: auto, 180px 180px;
+  color: #1a1613;
+  font-family: 'Cormorant Garamond', 'Georgia', serif;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+/* Layout 100% de ponta a ponta para telas 1920x1080p / 16:9 */
+.borderFrame {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  border-left: none;
+  border-right: none;
+  box-shadow: none;
+}
+
+/* Marca d'água vertical gigante no lado direito — segue o scroll */
+.rightWatermark {
+  position: fixed;
+  top: clamp(680px, 92vh, 900px);
+  right: 8px;
+  bottom: 40px;
+  width: 120px;
+  pointer-events: none;
+  z-index: 5;
+  display: flex;
+  justify-content: flex-start;
+}
+
+
+.watermarkText {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  font-family: 'Bodoni Moda', 'Playfair Display', serif;
+  font-size: clamp(4.5rem, 9.5vw, 11rem);
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(22, 18, 15, 0.92);
+  white-space: nowrap;
+  user-select: none;
+  line-height: 1;
+}
+
+.contentContainer {
+  position: relative;
+  z-index: 2;
+  /* Sem padding-right — banner ocupa toda a largura */
+  padding-right: 0;
+}
+
+@media (max-width: 992px) {
+  .rightWatermark {
+    display: none;
+  }
+  .contentContainer {
+    padding-right: 0;
+  }
+  .borderFrame {
+    border: none;
+  }
+}

@@ -1,0 +1,133 @@
+.about {
+  padding: var(--space-xl) 0;
+  border-top: 1px solid var(--line);
+}
+
+.topLine {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2.5rem;
+}
+
+.editionMark {
+  font-family: var(--font-interface);
+  font-size: var(--text-xs);
+  letter-spacing: 0.2em;
+  color: var(--ink-soft);
+  opacity: 0.4;
+}
+
+/* Título */
+.titleWrapper {
+  overflow: hidden;
+  margin-bottom: 3rem;
+}
+
+.titleMask {
+  overflow: hidden;
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 4.5rem);
+  color: var(--ink);
+  letter-spacing: 0.03em;
+  line-height: 1;
+}
+
+.titleLine {
+  display: block;
+}
+
+/* Grid de conteúdo */
+.contentGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem var(--gutter);
+  border-top: 1px solid var(--line);
+  padding-top: 2.5rem;
+}
+
+.textCol, .sideCol {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.paragraph {
+  font-family: var(--font-editorial);
+  font-size: var(--text-md);
+  color: var(--ink-soft);
+  line-height: 1.75;
+}
+
+.paragraphHighlight {
+  font-style: italic;
+  color: var(--ink);
+  border-left: 2px solid var(--rust);
+  padding-left: 1rem;
+}
+
+/* Botões */
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.btnPrimary {
+  font-family: var(--font-interface);
+  font-size: var(--text-xs);
+  letter-spacing: 0.18em;
+  background: var(--ink);
+  color: var(--paper-light);
+  padding: 0.75rem 1.5rem;
+  text-decoration: none;
+  border: 1px solid var(--ink);
+  transition: background 0.2s, color 0.2s;
+  display: inline-block;
+}
+
+.btnPrimary:hover {
+  background: var(--rust);
+  border-color: var(--rust);
+}
+
+.btnSecondary {
+  font-family: var(--font-interface);
+  font-size: var(--text-xs);
+  letter-spacing: 0.15em;
+  color: var(--ink);
+  padding: 0.75rem 1.5rem;
+  border: 1px solid var(--line);
+  text-decoration: none;
+  transition: border-color 0.2s, color 0.2s;
+  display: inline-block;
+}
+
+.btnSecondary:hover {
+  border-color: var(--ink);
+  color: var(--rust);
+}
+
+.btnDisabled {
+  font-family: var(--font-interface);
+  font-size: var(--text-xs);
+  letter-spacing: 0.15em;
+  color: var(--ink-soft);
+  opacity: 0.3;
+  padding: 0.75rem 1.5rem;
+  border: 1px solid var(--line);
+  cursor: not-allowed;
+}
+
+@media (max-width: 900px) {
+  .contentGrid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}

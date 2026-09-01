@@ -1,0 +1,173 @@
+.section {
+  padding: 4rem 2rem 2rem 2rem;
+  border-bottom: 1px solid rgba(40, 32, 24, 0.25);
+}
+
+.titleContainer {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 0.4rem;
+}
+
+.dropCapBox {
+  background-color: #14110f;
+  color: #f2e9dc;
+  font-family: 'Bodoni Moda', 'Playfair Display', serif;
+  font-size: 0.75em;
+  font-weight: 900;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 0.22em;
+  margin-right: 0.06em;
+  border-radius: 2px;
+  line-height: 1.1;
+  vertical-align: middle;
+}
+
+.sectionTitle {
+  font-family: 'Playfair Display', 'Cormorant Garamond', serif;
+  font-size: clamp(2.4rem, 4.8vw, 4rem);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: #14110f;
+  text-transform: uppercase;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+.subtitle {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.2rem, 2vw, 1.5rem);
+  font-style: italic;
+  color: #2b241f;
+  margin-bottom: 2.5rem;
+  display: flex;
+  align-items: baseline;
+  gap: 0.4rem;
+}
+
+.subtitleDropCap {
+  font-family: 'Bodoni Moda', serif;
+  font-size: 1.8rem;
+  font-style: normal;
+  font-weight: 800;
+  color: #14110f;
+  line-height: 1;
+}
+
+.cardsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 4rem;
+}
+
+.card {
+  background-color: rgba(238, 230, 218, 0.65);
+  border: 1px solid rgba(40, 32, 24, 0.22);
+  padding: 1.6rem 1.2rem;
+  border-radius: 3px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(40, 32, 24, 0.1);
+}
+
+.iconWrapper {
+  margin-bottom: 0.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cardTitle {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: #14110f;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.actionBtn {
+  background-color: #8b261b;
+  color: #ffffff;
+  font-family: 'Inter Tight', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 0.6rem 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+  text-decoration: none;
+  margin-bottom: 0.8rem;
+  transition: background-color 0.2s ease;
+  display: inline-block;
+}
+
+.actionBtn:hover {
+  background-color: #661a12;
+}
+
+.contactInfo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #382f27;
+  word-break: break-all;
+}
+
+/* Ilustração de mapa vintage no rodapé */
+.mapFooter {
+  position: relative;
+  width: 100%;
+  padding-top: 2rem;
+  border-top: 1px dashed rgba(40, 32, 24, 0.25);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mapSvg {
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+  opacity: 0.55;
+  margin-bottom: 1.5rem;
+}
+
+.studioFooterText {
+  font-family: 'Bodoni Moda', 'Playfair Display', serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  color: #14110f;
+  text-transform: uppercase;
+  margin-top: 0.5rem;
+}
+
+@media (max-width: 1100px) {
+  .cardsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .cardsGrid {
+    grid-template-columns: 1fr;
+  }
+}

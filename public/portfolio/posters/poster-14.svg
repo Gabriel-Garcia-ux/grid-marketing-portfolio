@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1350" fill="none">
+<rect width="1080" height="1350" fill="#c9bcad"/>
+<rect x="2" y="2" width="1076" height="1346" stroke="#171411" stroke-opacity=".4" stroke-width="2" fill="none"/>
+<rect x="18" y="18" width="1044" height="1314" stroke="#171411" stroke-opacity=".15" stroke-width="1" fill="none"/>
+<line x1="0" y1="300" x2="1080" y2="300" stroke="#171411" stroke-opacity=".12" stroke-width="1"/>
+<line x1="0" y1="1050" x2="1080" y2="1050" stroke="#171411" stroke-opacity=".12" stroke-width="1"/>
+<rect x="380" y="560" width="320" height="230" fill="#4a3828" fill-opacity=".07" stroke="#4a3828" stroke-opacity=".25" stroke-width="1.5"/>
+<polygon points="510,625 510,745 630,685" fill="#4a3828" fill-opacity=".18"/>
+<text x="44" y="200" font-family="Georgia,serif" font-size="48" fill="#302b26" fill-opacity=".55" letter-spacing="4">PROJETO 14</text>
+<text x="44" y="255" font-family="Georgia,serif" font-size="22" fill="#4a3828" fill-opacity=".7" letter-spacing="6">Key Visual</text>
+<text x="44" y="1100" font-family="Georgia,serif" font-size="20" fill="#302b26" fill-opacity=".4" letter-spacing="3">GRID MARKETING</text>
+<text x="44" y="1140" font-family="Georgia,serif" font-size="14" fill="#302b26" fill-opacity=".3" letter-spacing="5">SUBSTITUIR POSTER</text>
+<text x="44" y="1310" font-family="monospace" font-size="14" fill="#302b26" fill-opacity=".25" letter-spacing="2">GM - 14 / 20 - PORTFOLIO CRIATIVO</text>
+</svg>

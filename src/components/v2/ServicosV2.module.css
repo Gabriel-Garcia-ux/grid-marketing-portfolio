@@ -1,0 +1,449 @@
+.section {
+  padding: 4rem clamp(1.5rem, 3.5vw, 4.5rem);
+  border-bottom: 1px solid rgba(40, 32, 24, 0.25);
+  width: 100%;
+}
+
+.titleContainer {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 2.5rem;
+}
+
+.dropCapBox {
+  background-color: #14110f;
+  color: #f2e9dc;
+  font-family: 'Bodoni Moda', 'Playfair Display', serif;
+  font-size: 0.75em;
+  font-weight: 900;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 0.22em;
+  margin-right: 0.06em;
+  border-radius: 2px;
+  line-height: 1.1;
+  vertical-align: middle;
+}
+
+.sectionTitle {
+  font-family: 'Playfair Display', 'Cormorant Garamond', serif;
+  font-size: clamp(2.4rem, 4.8vw, 4rem);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: #14110f;
+  text-transform: uppercase;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+.cardsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.card {
+  background-color: rgba(238, 230, 218, 0.65);
+  border: 1px solid rgba(40, 32, 24, 0.22);
+  padding: 1.8rem 1.4rem;
+  border-radius: 3px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 380px;
+  position: relative;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  box-shadow: 0 4px 15px rgba(40, 32, 24, 0.04);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(139, 38, 27, 0.4);
+  box-shadow: 0 10px 25px rgba(40, 32, 24, 0.1);
+}
+
+.cardHeader {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+}
+
+.iconWrapper {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 1rem;
+  color: #14110f;
+}
+
+.cardTitle {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: #14110f;
+  text-transform: uppercase;
+  line-height: 1.25;
+}
+
+.itemList {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2rem 0;
+}
+
+.item {
+  font-family: 'Inter Tight', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #332b23;
+  margin-bottom: 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.item::before {
+  content: '•';
+  color: #8b261b;
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+.saibaMaisBtn {
+  background-color: #8b261b;
+  color: #ffffff;
+  font-family: 'Inter Tight', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 0.75rem 1.2rem;
+  border: none;
+  border-radius: 4px;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  width: 100%;
+  text-decoration: none;
+  display: block;
+}
+
+.saibaMaisBtn:hover {
+  background-color: #661a12;
+}
+
+@media (max-width: 1200px) {
+  .cardsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .cardsGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Modal / Lightbox de Serviços */
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(10, 8, 7, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  animation: fadeIn 0.25s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.modalContent {
+  position: relative;
+  width: 100%;
+  max-width: 860px;
+  background-color: #14110f;
+  border: 1px solid rgba(238, 230, 218, 0.2);
+  border-radius: 4px;
+  padding: 1.5rem 2rem 1.2rem 2rem;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.85);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: scaleUp 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes scaleUp {
+  from {
+    transform: scale(0.96);
+    opacity: 0.8;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.closeBtn {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  background: none;
+  border: none;
+  color: #f2e9dc;
+  font-size: 1.9rem;
+  cursor: pointer;
+  z-index: 10;
+  line-height: 1;
+  transition: color 0.2s ease, transform 0.2s ease;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.closeBtn:hover {
+  color: #8b261b;
+  transform: scale(1.15);
+}
+
+.modalHeaderInfo {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 1rem;
+  width: 100%;
+  justify-content: center;
+}
+
+.modalBadge {
+  background-color: #8b261b;
+  color: #ffffff;
+  font-family: 'Inter Tight', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 2px;
+  letter-spacing: 0.05em;
+}
+
+.modalCategoryTitle {
+  font-family: 'Bodoni Moda', 'Playfair Display', serif;
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #f2e9dc;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.modalItemList {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem 1.4rem;
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1rem 0;
+}
+
+.modalItem {
+  font-family: 'Inter Tight', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #d8cebf;
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.modalItem::before {
+  content: '•';
+  color: #8b261b;
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.modalImageWrapper {
+  width: 100%;
+  max-height: 60vh;
+  min-height: 320px;
+  background-color: #0d0b09;
+  border: 1px solid rgba(238, 230, 218, 0.1);
+  border-radius: 3px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.modalImage {
+  max-width: 100%;
+  max-height: 60vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  transition: opacity 0.2s ease;
+  animation: fadeInImage 0.3s ease;
+}
+
+@keyframes fadeInImage {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.thumbnailsContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  margin-bottom: 0.8rem;
+  width: 100%;
+}
+
+.thumbBtn {
+  background: #1c1815;
+  border: 2px solid rgba(238, 230, 218, 0.2);
+  border-radius: 4px;
+  padding: 2px;
+  cursor: pointer;
+  width: 64px;
+  height: 48px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.thumbBtn:hover {
+  border-color: rgba(238, 230, 218, 0.6);
+  transform: translateY(-2px);
+}
+
+.activeThumb {
+  border-color: #8b261b !important;
+  box-shadow: 0 0 10px rgba(139, 38, 27, 0.6);
+  transform: translateY(-2px);
+}
+
+.thumbImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 2px;
+  opacity: 0.75;
+  transition: opacity 0.2s ease;
+}
+
+.activeThumb .thumbImage,
+.thumbBtn:hover .thumbImage {
+  opacity: 1;
+}
+
+.thumbNumber {
+  position: absolute;
+  bottom: 2px;
+  right: 2px;
+  background-color: rgba(20, 17, 15, 0.85);
+  color: #f2e9dc;
+  font-family: 'Inter Tight', sans-serif;
+  font-size: 0.55rem;
+  font-weight: 700;
+  padding: 1px 4px;
+  border-radius: 2px;
+  line-height: 1;
+}
+
+.modalFooterText {
+  font-family: 'Cormorant Garamond', 'Playfair Display', serif;
+  font-size: 0.95rem;
+  font-style: italic;
+  color: #a89f91;
+  text-align: center;
+}
+
+.navBtn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(20, 17, 15, 0.85);
+  color: #f2e9dc;
+  border: 1px solid rgba(238, 230, 218, 0.2);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  font-size: 1.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 20;
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+.navBtn:hover {
+  background-color: #8b261b;
+  color: #ffffff;
+  border-color: #8b261b;
+  transform: translateY(-50%) scale(1.1);
+}
+
+.prevBtn {
+  left: -68px;
+}
+
+.nextBtn {
+  right: -68px;
+}
+
+@media (max-width: 992px) {
+  .prevBtn {
+    left: 8px;
+    background-color: rgba(20, 17, 15, 0.9);
+  }
+  .nextBtn {
+    right: 8px;
+    background-color: rgba(20, 17, 15, 0.9);
+  }
+  .modalContent {
+    padding: 1.2rem 1rem 1rem 1rem;
+  }
+  .thumbBtn {
+    width: 52px;
+    height: 40px;
+  }
+}
+

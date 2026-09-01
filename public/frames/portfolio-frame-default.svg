@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" fill="none">
+  <!-- Moldura editorial externa -->
+  <rect x="0" y="0" width="400" height="500" stroke="#171411" stroke-opacity="0.45" stroke-width="1.2" fill="none"/>
+  <!-- Linha interna -->
+  <rect x="6" y="6" width="388" height="488" stroke="#171411" stroke-opacity="0.15" stroke-width="0.5" fill="none"/>
+  <!-- Canto superior esquerdo decorativo -->
+  <line x1="0" y1="30" x2="30" y2="30" stroke="#171411" stroke-opacity="0.35" stroke-width="0.7"/>
+  <line x1="30" y1="0" x2="30" y2="30" stroke="#171411" stroke-opacity="0.35" stroke-width="0.7"/>
+  <!-- Canto superior direito -->
+  <line x1="370" y1="0" x2="370" y2="30" stroke="#171411" stroke-opacity="0.35" stroke-width="0.7"/>
+  <line x1="370" y1="30" x2="400" y2="30" stroke="#171411" stroke-opacity="0.35" stroke-width="0.7"/>
+  <!-- Canto inferior esquerdo -->
+  <line x1="0" y1="470" x2="30" y2="470" stroke="#171411" stroke-opacity="0.35" stroke-width="0.7"/>
+  <line x1="30" y1="470" x2="30" y2="500" stroke="#171411" stroke-opacity="0.35" stroke-width="0.7"/>
+  <!-- Canto inferior direito -->
+  <line x1="370" y1="470" x2="400" y2="470" stroke="#171411" stroke-opacity="0.35" stroke-width="0.7"/>
+  <line x1="370" y1="470" x2="370" y2="500" stroke="#171411" stroke-opacity="0.35" stroke-width="0.7"/>
+</svg>

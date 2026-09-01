@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" fill="none">
+  <rect width="400" height="500" fill="#c4b8aa"/>
+  <rect x="1" y="1" width="398" height="498" stroke="#171411" stroke-opacity="0.3" stroke-width="0.5"/>
+  <!-- Moldura dupla -->
+  <rect x="8" y="8" width="384" height="484" stroke="#171411" stroke-opacity="0.2" stroke-width="0.5"/>
+  <!-- Textura suave -->
+  <rect width="400" height="500" fill="url(#paper)" opacity="0.4"/>
+  <!-- Placeholder content -->
+  <line x1="200" y1="120" x2="200" y2="380" stroke="#8b4734" stroke-width="0.5" stroke-opacity="0.5"/>
+  <line x1="80" y1="250" x2="320" y2="250" stroke="#8b4734" stroke-width="0.5" stroke-opacity="0.5"/>
+  <!-- Ícone de pessoa simplificado -->
+  <circle cx="200" cy="170" r="45" fill="none" stroke="#302b26" stroke-width="1.5" stroke-opacity="0.4"/>
+  <circle cx="200" cy="160" r="22" fill="#302b26" fill-opacity="0.12" stroke="#302b26" stroke-width="1" stroke-opacity="0.3"/>
+  <path d="M140 310 Q200 265 260 310" fill="#302b26" fill-opacity="0.12" stroke="#302b26" stroke-width="1" stroke-opacity="0.3"/>
+  <!-- Texto editorial -->
+  <text x="200" y="370" font-family="serif" font-size="9" fill="#302b26" fill-opacity="0.6" text-anchor="middle" letter-spacing="3">GABRIEL GARCIA</text>
+  <text x="200" y="385" font-family="serif" font-size="7" fill="#8b4734" fill-opacity="0.8" text-anchor="middle" letter-spacing="2">SUBSTITUIR RETRATO</text>
+  <!-- Numeração editorial -->
+  <text x="18" y="26" font-family="monospace" font-size="7" fill="#302b26" fill-opacity="0.4" letter-spacing="1">GM / 001</text>
+  <text x="18" y="490" font-family="monospace" font-size="6" fill="#302b26" fill-opacity="0.3" letter-spacing="1">RETRATO · EDITOR DE VÍDEO · DESIGNER GRÁFICO</text>
+</svg>
