@@ -65,18 +65,6 @@ export default function Hero() {
       className={styles.hero}
       aria-label="Seção inicial — Grid Marketing"
     >
-      {/* Imagem de Fundo Artística Integrada */}
-      <div className={styles.bgWrapper} aria-hidden="true">
-        <Image
-          src="/imagens de obras para o background/imagens pro site/ChatGPT Image 1 de set. de 2026, 23_52_27.png"
-          alt=""
-          fill
-          className={styles.bgImage}
-          priority
-        />
-        <div className={styles.bgOverlay} />
-      </div>
-
       <div className="container" style={{ position: "relative", zIndex: 1 }}>
         {/* Grid editorial 12 colunas */}
         <div className={styles.grid}>
@@ -106,6 +94,17 @@ export default function Hero() {
 
           {/* Coluna B: Título editorial + galeria */}
           <div className={styles.contentCol}>
+            {/* Imagem da Mona Lisa olhando para a foto com blend e esfumaçado */}
+            <div className={styles.monaLisaBg} aria-hidden="true">
+              <Image
+                src="/imagens de obras para o background/imagens pro site/ChatGPT Image 2 de set. de 2026, 00_43_58.png"
+                alt=""
+                fill
+                className={styles.monaLisaImg}
+                priority
+              />
+            </div>
+
             {/* Badge */}
             <div className={styles.badge}>
               <span className="badge">PORTFÓLIO CRIATIVO — EDIÇÃO Nº 01</span>
@@ -140,8 +139,17 @@ export default function Hero() {
         <div className={styles.divider} />
       </div>
 
-      {/* Masthead monumental */}
+      {/* Masthead monumental com a obra de arte completa sem cortes */}
       <div className={styles.mastheadWrapper}>
+        <div className={styles.mastheadArtworkBg} aria-hidden="true">
+          <Image
+            src="/imagens de obras para o background/imagens pro site/ChatGPT Image 1 de set. de 2026, 23_52_27.png"
+            alt=""
+            fill
+            className={styles.mastheadArtworkImg}
+          />
+        </div>
+
         <h2 ref={mastheadRef} className={styles.masthead} aria-label="Grid Marketing">
           GRID<br className={styles.mobileBreak} />
           <span className={styles.mastheadSecond}>MARKETING</span>

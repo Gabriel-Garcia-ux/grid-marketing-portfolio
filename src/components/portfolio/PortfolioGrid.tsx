@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
+import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { portfolioItems } from "@/content/portfolio-items";
@@ -74,7 +75,17 @@ export default function PortfolioGrid() {
   };
 
   return (
-    <>
+    <div className={styles.containerWrapper}>
+      {/* Obra de Argos e Odisseu no cantinho com bordas esfumaçadas em degradê */}
+      <div className={styles.argosArtworkWrapper} aria-hidden="true">
+        <Image
+          src="/imagens de obras para o background/imagens pro site/ChatGPT Image 1 de set. de 2026, 23_46_05.png"
+          alt=""
+          fill
+          className={styles.argosArtworkImg}
+        />
+      </div>
+
       <div ref={gridRef} className={styles.grid}>
         {portfolioItems.map((item) => (
           <div key={item.id} className={styles.cardWrapper}>
@@ -92,6 +103,6 @@ export default function PortfolioGrid() {
           onPrev={goPrev}
         />
       )}
-    </>
+    </div>
   );
 }

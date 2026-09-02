@@ -54,18 +54,7 @@ export default function About() {
 
   return (
     <section id="sobre" ref={sectionRef} className={styles.about} aria-labelledby="about-heading">
-      {/* Imagem de Fundo Artística Integrada */}
-      <div className={styles.bgWrapper} aria-hidden="true">
-        <Image
-          src="/imagens de obras para o background/imagens pro site/ChatGPT Image 1 de set. de 2026, 23_46_05.png"
-          alt=""
-          fill
-          className={styles.bgImage}
-        />
-        <div className={styles.bgOverlay} />
-      </div>
-
-      <div className="container" style={{ position: "relative", zIndex: 1 }}>
+      <div className="container">
         {/* Linha de topo */}
         <div className={styles.topLine}>
           <span className="badge">{about.badge}</span>
