@@ -65,7 +65,19 @@ export default function Hero() {
       className={styles.hero}
       aria-label="Seção inicial — Grid Marketing"
     >
-      <div className="container">
+      {/* Imagem de Fundo Artística Integrada */}
+      <div className={styles.bgWrapper} aria-hidden="true">
+        <Image
+          src="/imagens de obras para o background/imagens pro site/ChatGPT Image 1 de set. de 2026, 23_52_27.png"
+          alt=""
+          fill
+          className={styles.bgImage}
+          priority
+        />
+        <div className={styles.bgOverlay} />
+      </div>
+
+      <div className="container" style={{ position: "relative", zIndex: 1 }}>
         {/* Grid editorial 12 colunas */}
         <div className={styles.grid}>
           {/* Coluna A: Retrato */}

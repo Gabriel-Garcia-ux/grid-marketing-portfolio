@@ -1,6 +1,35 @@
 .section {
   padding: 4rem 2rem;
   border-bottom: 1px solid rgba(40, 32, 24, 0.25);
+  position: relative;
+  overflow: hidden;
+}
+
+.bgWrapper {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.bgImage {
+  object-fit: cover;
+  opacity: 0.5;
+  mix-blend-mode: multiply;
+  filter: contrast(1.05);
+}
+
+.bgOverlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 75% 65%, transparent 25%, rgba(232, 223, 212, 0.45) 100%);
+  pointer-events: none;
+}
+
+.contentInner {
+  position: relative;
+  z-index: 1;
 }
 
 .titleContainer {

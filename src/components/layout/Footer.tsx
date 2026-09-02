@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { siteContent } from "@/content/site-content";
 import styles from "./Footer.module.css";
 
@@ -28,6 +29,17 @@ const hasLinkedin =
 export default function Footer() {
   return (
     <footer className={styles.footer} role="contentinfo">
+      {/* Imagem de Fundo Artística Clara Integrada */}
+      <div className={styles.bgWrapper} aria-hidden="true">
+        <Image
+          src="/imagens de obras para o background/imagens pro site/ChatGPT Image 1 de set. de 2026, 23_40_52.png"
+          alt=""
+          fill
+          className={styles.bgImage}
+        />
+        <div className={styles.bgOverlay} />
+      </div>
+
       {/* Faixa de texto contínua — loop infinito */}
       <div className={styles.tickerWrapper} aria-hidden="true">
         <div className={styles.tickerTrack}>

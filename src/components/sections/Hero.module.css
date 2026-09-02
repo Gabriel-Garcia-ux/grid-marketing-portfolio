@@ -5,6 +5,28 @@
   overflow: hidden;
 }
 
+.bgWrapper {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.bgImage {
+  object-fit: cover;
+  opacity: 0.5;
+  mix-blend-mode: multiply;
+  filter: contrast(1.05);
+}
+
+.bgOverlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, transparent 30%, rgba(232, 223, 212, 0.45) 100%);
+  pointer-events: none;
+}
+
 /* Grid editorial */
 .grid {
   display: grid;

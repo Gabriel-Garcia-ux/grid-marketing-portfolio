@@ -1,6 +1,30 @@
 .about {
   padding: var(--space-xl) 0;
   border-top: 1px solid var(--line);
+  position: relative;
+  overflow: hidden;
+}
+
+.bgWrapper {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.bgImage {
+  object-fit: cover;
+  opacity: 0.5;
+  mix-blend-mode: multiply;
+  filter: contrast(1.05);
+}
+
+.bgOverlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 75% 65%, transparent 25%, rgba(232, 223, 212, 0.45) 100%);
+  pointer-events: none;
 }
 
 .topLine {
