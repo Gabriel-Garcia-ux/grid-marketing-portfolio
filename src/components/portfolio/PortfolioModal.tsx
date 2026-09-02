@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState, useCallback } from "react";
 import gsap from "gsap";
 import { PortfolioItem } from "@/types";
+import SmartVideoPlayer from "@/components/ui/SmartVideoPlayer";
 import styles from "./PortfolioModal.module.css";
 
 interface PortfolioModalProps {
@@ -182,39 +183,16 @@ export default function PortfolioModal({
         <div
           className={styles.playerWrapper}
           style={{ aspectRatio: item.videoAspectRatio || "9 / 16" }}
-          onClick={hasVideo ? togglePlayPause : undefined}
-          title={hasVideo ? (isPlaying ? "Clique para pausar" : "Clique para dar play") : undefined}
         >
           {hasVideo ? (
-            <>
-              <video
-                ref={videoRef}
-                src={item.video}
-                poster={item.poster}
-                className={styles.video}
-                playsInline
-                loop
-                aria-label={`Vídeo: ${item.title}`}
-              />
-
-              {/* Overlay de Play / Pause animado quando clica ou quando está pausado */}
-              {(!isPlaying || showPlayPulse) && (
-                <div className={`${styles.playPulseOverlay} ${showPlayPulse ? styles.pulseAnim : ""}`}>
-                  <div className={styles.playPulseBadge}>
-                    {isPlaying ? (
-                      <svg width="36" height="36" viewBox="0 0 24 24" fill="currentColor">
-                        <rect x="6" y="4" width="4" height="16" rx="1" />
-                        <rect x="14" y="4" width="4" height="16" rx="1" />
-                      </svg>
-                    ) : (
-                      <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor" style={{ marginLeft: "4px" }}>
-                        <polygon points="5,3 19,12 5,21" />
-                      </svg>
-                    )}
-                  </div>
-                </div>
-              )}
-            </>
+            <SmartVideoPlayer
+              src={item.video}
+              poster={item.poster}
+              title={item.title}
+              autoplay={true}
+              controls={true}
+              loop={true}
+            />
           ) : (
             <div className={styles.noVideo}>
               {/* eslint-disable-next-line @next/next/no-img-element */}

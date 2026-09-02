@@ -115,30 +115,38 @@
 
 /* Metadados */
 .meta {
-  padding: 0.6rem 0.2rem 0;
+  padding: 0.5rem 0.2rem 0;
   display: flex;
-  align-items: baseline;
-  gap: 0.5rem;
-  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 2px;
 }
 
 .metaTitle {
   font-family: var(--font-interface);
-  font-size: 0.8rem;
+  font-size: 0.72rem;
   font-weight: 700;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.04em;
   color: #171411;
   text-transform: uppercase;
-  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+  width: 100%;
 }
 
 .metaCategory {
-  font-family: var(--font-editorial);
-  font-size: 0.75rem;
-  color: #663125;
-  font-weight: 600;
-  font-style: italic;
+  font-family: var(--font-interface);
+  font-size: 0.58rem;
+  color: #8b261b;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
   white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+  width: 100%;
 }
 
 /* Mobile */

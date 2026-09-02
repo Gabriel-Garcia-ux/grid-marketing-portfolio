@@ -131,20 +131,31 @@
 
 .metaTitle {
   font-family: var(--font-interface);
-  font-size: 0.7rem;
+  font-size: 0.68rem;
   font-weight: 700;
   letter-spacing: 0.04em;
   color: #171411;
   text-transform: uppercase;
   line-height: 1.2;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+  width: 100%;
 }
 
 .metaCategory {
-  font-family: var(--font-editorial);
-  font-size: 0.65rem;
-  color: #663125;
-  font-weight: 600;
-  font-style: italic;
+  font-family: var(--font-interface);
+  font-size: 0.55rem;
+  color: #8b261b;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+  width: 100%;
 }
 
 /* Responsive */

@@ -6,6 +6,8 @@ import styles from "./PortfolioV2.module.css";
 import { portfolioItems } from "@/content/portfolio-items";
 import { PortfolioItem } from "@/types";
 
+import SmartVideoPlayer from "@/components/ui/SmartVideoPlayer";
+
 interface PortfolioV2Props {
   selectedProject?: PortfolioItem | null;
   onSelectProject?: (item: PortfolioItem | null) => void;
@@ -117,11 +119,13 @@ export default function PortfolioV2({ selectedProject: externalSelected, onSelec
             </button>
 
             <div className={styles.modalVideoWrapper}>
-              <video
+              <SmartVideoPlayer
                 src={selectedItem.video}
-                controls
-                autoPlay
-                className={styles.modalVideo}
+                poster={selectedItem.poster}
+                title={selectedItem.title}
+                autoplay={true}
+                controls={true}
+                loop={true}
               />
             </div>
 

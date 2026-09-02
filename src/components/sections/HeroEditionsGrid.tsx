@@ -3,6 +3,7 @@
 import { useState, useRef, useCallback, useEffect } from "react";
 import gsap from "gsap";
 import PortfolioFrame from "@/components/portfolio/PortfolioFrame";
+import SmartVideoPlayer from "@/components/ui/SmartVideoPlayer";
 import styles from "./HeroEditionsGrid.module.css";
 import modalStyles from "@/components/portfolio/PortfolioModal.module.css";
 
@@ -45,7 +46,7 @@ const heroEditions: HeroItem[] = [
     title: "Escadaria",
     category: "Motion & Edição",
     poster: "/imagens moldura/escadaria.png",
-    video: "/videos portfolio/escadaria.mp4",
+    video: "https://youtube.com/shorts/mZo0ZE9aKZY?feature=share",
     alt: "Moldura do vídeo Escadaria",
   },
 ];
@@ -172,34 +173,15 @@ function HeroEditionsModal({
         <div
           className={modalStyles.playerWrapper}
           style={{ aspectRatio: "9 / 16" }}
-          onClick={togglePlayPause}
-          title={isPlaying ? "Clique para pausar" : "Clique para dar play"}
         >
-          <video
-            ref={videoRef}
+          <SmartVideoPlayer
             src={item.video}
             poster={item.poster}
-            className={modalStyles.video}
-            playsInline
-            loop
-            aria-label={`Vídeo: ${item.title}`}
+            title={item.title}
+            autoplay={true}
+            controls={true}
+            loop={true}
           />
-          {(!isPlaying || showPlayPulse) && (
-            <div className={`${modalStyles.playPulseOverlay} ${showPlayPulse ? modalStyles.pulseAnim : ""}`}>
-              <div className={modalStyles.playPulseBadge}>
-                {isPlaying ? (
-                  <svg width="36" height="36" viewBox="0 0 24 24" fill="currentColor">
-                    <rect x="6" y="4" width="4" height="16" rx="1" />
-                    <rect x="14" y="4" width="4" height="16" rx="1" />
-                  </svg>
-                ) : (
-                  <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor" style={{ marginLeft: "4px" }}>
-                    <polygon points="5,3 19,12 5,21" />
-                  </svg>
-                )}
-              </div>
-            </div>
-          )}
         </div>
 
         <div className={modalStyles.footerInfo}>
