@@ -106,58 +106,59 @@ export default function MinhasEdicoesV2({ onSelectProject }: MinhasEdicoesV2Prop
       </div>
 
 
-      <div className={styles.grid}>
-        {/* Foto Gabriel em P&B */}
-        <div className={styles.portraitCard}>
+      <div className={styles.compositionArea}>
+        <div className={styles.grid}>
+          {/* Layer 1: Foto Gabriel em P&B ampliada conforme Print 2 */}
+          <div className={styles.portraitCard}>
+            <Image
+              src="/images/gabriel-portrait.jpg"
+              alt="Gabriel Garcia - Editor de Vídeo & Designer"
+              width={480}
+              height={640}
+              className={styles.portraitImg}
+              priority
+            />
+          </div>
+
+          {/* Layer 3 & 4: Projetos em Destaque (Cards menores com Nomad sobrepondo ombro/cotovelo da Mona Lisa) */}
+          <div className={styles.featuredGrid}>
+            {featured.map((feat, index) => (
+              <div
+                key={feat.id}
+                className={`${styles.featuredCard} ${index === 0 ? styles.nomadCard : ""}`}
+                onClick={() => feat.item && onSelectProject?.(feat.item)}
+              >
+                <div className={styles.badgeNumber}>{feat.id}</div>
+                <div className={styles.playBadge}>▶</div>
+                <div className={styles.posterWrapper}>
+                  <Image
+                    src={feat.poster}
+                    alt={feat.title}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 240px"
+                    className={styles.posterImg}
+                  />
+                </div>
+                <div className={styles.cardTitle}>{feat.title}</div>
+                <div className={styles.cardCategory}>{feat.category}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Layer 2: Mona Lisa com mão e braço sobrepondo a foto do Gabriel apontando para seu pescoço/rosto e cabeça sobrepondo levemente o card da Nomad */}
+        <div className={styles.monaLisaContainer} aria-hidden="true">
           <Image
-            src="/images/gabriel-portrait.jpg"
-            alt="Gabriel Garcia - Editor de Vídeo & Designer"
-            width={350}
-            height={460}
-            className={styles.portraitImg}
+            src="/imagens de obras para o background/imagens pro site/monalisa-cutout-perfect.png"
+            alt="Mona Lisa apontando para Gabriel Garcia"
+            width={520}
+            height={780}
+            className={styles.monaLisaImg}
             priority
           />
         </div>
 
-        {/* Projetos em Destaque */}
-        <div className={styles.featuredGrid}>
-          {featured.map((feat, index) => (
-            <div
-              key={feat.id}
-              className={`${styles.featuredCard} ${index === 0 ? styles.nomadCard : ""}`}
-              onClick={() => feat.item && onSelectProject?.(feat.item)}
-            >
-              <div className={styles.badgeNumber}>{feat.id}</div>
-              <div className={styles.playBadge}>▶</div>
-              <div className={styles.posterWrapper}>
-                <Image
-                  src={feat.poster}
-                  alt={feat.title}
-                  fill
-                  sizes="(max-width: 768px) 100vw, 250px"
-                  className={styles.posterImg}
-                />
-              </div>
-              <div className={styles.cardTitle}>{feat.title}</div>
-              <div className={styles.cardCategory}>{feat.category}</div>
-            </div>
-          ))}
-
-          {/* Mona Lisa sobreposta olhando e apontando para a foto de Gabriel (Print 5) */}
-          <div className={styles.monaLisaContainer} aria-hidden="true">
-            <Image
-              src="/imagens de obras para o background/imagens pro site/ChatGPT Image 2 de set. de 2026, 00_43_58.png"
-              alt="Mona Lisa apontando para Gabriel Garcia"
-              width={480}
-              height={720}
-              className={styles.monaLisaImg}
-              priority
-            />
-          </div>
-        </div>
-      </div>
-
-      {/* Barra de Filtros com o espaço vazio central para a passagem da Mona Lisa (Print 4) */}
+      {/* Barra de Filtros dividida com espaço central (Print 4) */}
       <div className={styles.filterBar}>
         <div className={styles.filterGroupLeft}>
           <button
@@ -174,7 +175,7 @@ export default function MinhasEdicoesV2({ onSelectProject }: MinhasEdicoesV2Prop
           </button>
         </div>
 
-        {/* Espaço vazio central reservado conforme rascunho no Print 4 */}
+        {/* Espaço central reservado para o corpo da Mona Lisa */}
         <div className={styles.filterCenterSpacer} aria-hidden="true" />
 
         <div className={styles.filterGroupRight}>
@@ -193,7 +194,7 @@ export default function MinhasEdicoesV2({ onSelectProject }: MinhasEdicoesV2Prop
         </div>
       </div>
 
-      {/* Masthead Monumental GRIDMARKETING com pontinha superior cortada e obra ao fundo (Print 2 & 3) */}
+      {/* Layer 5: Masthead Monumental GRIDMARKETING com fundo vermelho e texto branco alinhado à esquerda (Print 3 & 5) */}
       <div className={styles.mastheadWrapper}>
         <div className={styles.mastheadArtworkBg} aria-hidden="true">
           <Image
@@ -206,6 +207,7 @@ export default function MinhasEdicoesV2({ onSelectProject }: MinhasEdicoesV2Prop
         <h2 className={styles.mastheadText} aria-label="Grid Marketing">
           GRIDMARKETING
         </h2>
+      </div>
       </div>
     </section>
   );
