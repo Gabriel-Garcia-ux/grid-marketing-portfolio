@@ -1,47 +1,57 @@
+"use client";
+
+import React, { useState } from "react";
+import ParchmentWrapper from "@/components/v2/ParchmentWrapper";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import VideoBanner from "@/components/sections/VideoBanner";
-import Hero from "@/components/sections/Hero";
-import About from "@/components/sections/About";
-import PortfolioGrid from "@/components/portfolio/PortfolioGrid";
-// import Services from "@/components/sections/Services";
-// import Tools from "@/components/sections/Tools";
-// import Experience from "@/components/sections/Experience";
-// import Process from "@/components/sections/Process";
-// import Contact from "@/components/sections/Contact";
-// import SmoothScroll from "@/components/layout/SmoothScroll";
-// import TornPaperCanvas from "@/components/motion/TornPaperCanvas";
+import MinhasEdicoesV2 from "@/components/v2/MinhasEdicoesV2";
+import SobreMimV2 from "@/components/v2/SobreMimV2";
+import ServicosV2 from "@/components/v2/ServicosV2";
+import PortfolioV2 from "@/components/v2/PortfolioV2";
+import ExperienciaV2 from "@/components/v2/ExperienciaV2";
+import ContatoV2 from "@/components/v2/ContatoV2";
+import { PortfolioItem } from "@/types";
 
 export default function Home() {
+  const [selectedProject, setSelectedProject] = useState<PortfolioItem | null>(null);
+
+  const handleSelectProject = (item: PortfolioItem | null) => {
+    setSelectedProject(item);
+  };
+
   return (
-    <>
-      {/* <SmoothScroll> */}
-        <Header />
-        
-        <main>
-          <VideoBanner />
-          <Hero />
-          <About />
-          
-          <section id="portfolio" style={{ padding: '8rem 0', borderTop: '1px solid var(--line)' }}>
-            <div className="container">
-              <h2 style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(2.5rem, 6vw, 5rem)', marginBottom: '3rem', letterSpacing: '0.04em' }}>PORTFÓLIO</h2>
-              <PortfolioGrid />
-            </div>
-          </section>
+    <ParchmentWrapper>
+      <Header />
 
-          {/* 
-          <Services />
-          <Tools />
-          <Experience />
-          <Process />
-          <Contact /> 
-          */}
-        </main>
+      <main id="inicio">
+        {/* Banner Principal em Vídeo Original do Site */}
+        <VideoBanner />
 
-        <Footer />
-      {/* </SmoothScroll> */}
-      {/* <TornPaperCanvas /> */}
-    </>
+        {/* 1. Minhas Edições */}
+        <MinhasEdicoesV2 onSelectProject={handleSelectProject} />
+
+        {/* 2. Sobre Mim */}
+        <SobreMimV2 />
+
+        {/* 3. Serviços */}
+        <ServicosV2 />
+
+        {/* 4. Portfólio Completo com Player Interativo */}
+        <PortfolioV2
+          selectedProject={selectedProject}
+          onSelectProject={handleSelectProject}
+        />
+
+        {/* 5. Experiência Profissional */}
+        <ExperienciaV2 />
+
+        {/* 6. Contato e Redes */}
+        <ContatoV2 />
+      </main>
+
+      <Footer />
+    </ParchmentWrapper>
   );
 }
+

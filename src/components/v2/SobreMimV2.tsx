@@ -7,7 +7,7 @@ export default function SobreMimV2() {
   const { about } = siteContent;
 
   return (
-    <section id="sobre-mim" className={styles.section}>
+    <section id="sobre" className={styles.section}>
       {/* Imagem de Fundo Artística Integrada */}
       <div className={styles.bgWrapper} aria-hidden="true">
         <Image

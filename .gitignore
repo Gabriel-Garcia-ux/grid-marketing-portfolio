@@ -46,4 +46,6 @@ next-env.d.ts
 *.avi
 *.mkv
 public/videos portfolio/
+!public/videos portfolio/video do banner.mp4
 public/servico/
+

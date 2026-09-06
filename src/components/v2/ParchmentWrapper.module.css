@@ -42,9 +42,9 @@
 .watermarkText {
   writing-mode: vertical-rl;
   text-orientation: mixed;
-  font-family: 'Bodoni Moda', 'Playfair Display', serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: clamp(4.5rem, 9.5vw, 11rem);
-  font-weight: 800;
+  font-weight: 900;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: rgba(22, 18, 15, 0.92);

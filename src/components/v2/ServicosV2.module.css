@@ -14,9 +14,9 @@
 .dropCapBox {
   background-color: #14110f;
   color: #f2e9dc;
-  font-family: 'Bodoni Moda', 'Playfair Display', serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 0.75em;
-  font-weight: 900;
+  font-weight: 800;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -28,10 +28,10 @@
 }
 
 .sectionTitle {
-  font-family: 'Playfair Display', 'Cormorant Garamond', serif;
-  font-size: clamp(2.4rem, 4.8vw, 4rem);
-  font-weight: 700;
-  letter-spacing: 0.06em;
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(2.2rem, 4.4vw, 3.6rem);
+  font-weight: 800;
+  letter-spacing: 0.04em;
   color: #14110f;
   text-transform: uppercase;
   line-height: 1;
@@ -84,10 +84,10 @@
 }
 
 .cardTitle {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.1rem;
-  font-weight: 700;
-  letter-spacing: 0.04em;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 800;
+  letter-spacing: 0.03em;
   color: #14110f;
   text-transform: uppercase;
   line-height: 1.25;
@@ -122,10 +122,10 @@
 .saibaMaisBtn {
   background-color: #8b261b;
   color: #ffffff;
-  font-family: 'Inter Tight', sans-serif;
-  font-size: 0.75rem;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.72rem;
   font-weight: 700;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   padding: 0.75rem 1.2rem;
   border: none;
@@ -240,20 +240,20 @@
 .modalBadge {
   background-color: #8b261b;
   color: #ffffff;
-  font-family: 'Inter Tight', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 0.7rem;
-  font-weight: 700;
+  font-weight: 800;
   padding: 3px 8px;
   border-radius: 2px;
   letter-spacing: 0.05em;
 }
 
 .modalCategoryTitle {
-  font-family: 'Bodoni Moda', 'Playfair Display', serif;
-  font-size: 1.05rem;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
   font-weight: 800;
   color: #f2e9dc;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
 }
 
@@ -378,9 +378,9 @@
   right: 2px;
   background-color: rgba(20, 17, 15, 0.85);
   color: #f2e9dc;
-  font-family: 'Inter Tight', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 0.55rem;
-  font-weight: 700;
+  font-weight: 800;
   padding: 1px 4px;
   border-radius: 2px;
   line-height: 1;
