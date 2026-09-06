@@ -1,39 +1,24 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import React, { useRef, useState } from "react";
 import styles from "./VideoBanner.module.css";
 
 export default function VideoBanner() {
-  const videoRef = useRef<HTMLVideoElement>(null);
+  const iframeRef = useRef<HTMLIFrameElement>(null);
+  const [isMuted, setIsMuted] = useState(true);
 
-  useEffect(() => {
-    const video = videoRef.current;
-    if (!video) return;
-
-    // Toca uma vez ao montar (cada carregamento/recarga da página)
-    video.currentTime = 0;
-    const playPromise = video.play();
-
-    if (playPromise !== undefined) {
-      playPromise.catch(() => {
-        // Autoplay bloqueado pelo browser — tenta com muted
-        if (video) {
-          video.muted = true;
-          video.play().catch(() => {
-            // silencia erros de reprodução
-          });
-        }
-      });
-    }
-
-    // Para o vídeo quando ele termina (sem loop)
-    const handleEnded = () => {
-      // Vídeo já pausou sozinho por não ter loop — fica no último frame
-    };
-
-    video.addEventListener("ended", handleEnded);
-    return () => video.removeEventListener("ended", handleEnded);
-  }, []);
+  const toggleSound = () => {
+    if (!iframeRef.current?.contentWindow) return;
+    const nextMuted = !isMuted;
+    setIsMuted(nextMuted);
+    iframeRef.current.contentWindow.postMessage(
+      JSON.stringify({
+        event: "command",
+        func: nextMuted ? "mute" : "unMute",
+      }),
+      "*"
+    );
+  };
 
   return (
     <section
@@ -42,17 +27,26 @@ export default function VideoBanner() {
       aria-label="Banner de apresentação Grid Marketing"
     >
       <div className={styles.videoWrapper}>
-        <video
-          ref={videoRef}
-          src="/videos portfolio/video do banner.mp4"
-          className={styles.video}
-          muted
-          playsInline
-          preload="auto"
-          aria-hidden="true"
+        <iframe
+          ref={iframeRef}
+          src="https://www.youtube-nocookie.com/embed/fF3gGSyuxYA?autoplay=1&mute=1&controls=0&loop=0&rel=0&playsinline=1&modestbranding=1&enablejsapi=1&iv_load_policy=3"
+          title="Grid Marketing - Apresentação Oficial"
+          className={styles.iframe}
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
         />
 
-        {/* Overlay sutil com gradiente para integrar com a seção seguinte */}
+        {/* Botão de áudio opcional para permitir ouvir com som */}
+        <button
+          className={styles.soundButton}
+          onClick={toggleSound}
+          aria-label={isMuted ? "Ativar som do banner" : "Mutar som do banner"}
+          title={isMuted ? "Ativar áudio" : "Mutar áudio"}
+        >
+          {isMuted ? "🔇 ÁUDIO" : "🔊 ÁUDIO ATIVO"}
+        </button>
+
+        {/* Overlay sutil na base para transição orgânica com a seção seguinte */}
         <div className={styles.overlayBottom} aria-hidden="true" />
       </div>
     </section>

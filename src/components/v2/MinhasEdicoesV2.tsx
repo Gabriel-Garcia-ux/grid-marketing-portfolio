@@ -194,16 +194,8 @@ export default function MinhasEdicoesV2({ onSelectProject }: MinhasEdicoesV2Prop
         </div>
       </div>
 
-      {/* Layer 5: Masthead Monumental GRIDMARKETING com fundo vermelho e texto branco alinhado à esquerda (Print 3 & 5) */}
+      {/* Layer 6: Masthead Monumental GRIDMARKETING com fundo vermelho sólido e texto branco */}
       <div className={styles.mastheadWrapper}>
-        <div className={styles.mastheadArtworkBg} aria-hidden="true">
-          <Image
-            src="/imagens de obras para o background/imagens pro site/ChatGPT Image 1 de set. de 2026, 23_52_27.png"
-            alt=""
-            fill
-            className={styles.mastheadArtworkImg}
-          />
-        </div>
         <h2 className={styles.mastheadText} aria-label="Grid Marketing">
           GRIDMARKETING
         </h2>

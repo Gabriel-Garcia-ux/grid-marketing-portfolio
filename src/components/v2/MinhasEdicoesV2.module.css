@@ -213,7 +213,7 @@
 */
 .monaLisaContainer {
   position: absolute;
-  bottom: -18px;
+  bottom: clamp(18px, 2vw, 36px);
   left: clamp(168px, 14.2vw, 238px);
   width: clamp(285px, 22.5vw, 360px);
   pointer-events: none;
@@ -282,11 +282,12 @@
 }
 
 /* Layer 6: Masthead Monumental GRIDMARKETING (Print 3 & 5)
-   - Fundo vermelho (#8b261b)
+   - Fundo vermelho sólido com opacidade total (#8b261b)
+   - Sem imagem de fundo
+   - Altura ampliada cobrindo totalmente a base da Mona Lisa
    - Texto branco (#ffffff)
    - Começa bem no canto esquerdo com bastante espaço à direita (Print 3)
    - Pontinha de cima cortada pela linha superior
-   - Sobreposto à parte inferior da Mona Lisa (z-index: 10)
 */
 .mastheadWrapper {
   position: relative;
@@ -294,7 +295,7 @@
   margin-top: 1.6rem;
   border-top: 1px solid rgba(40, 32, 24, 0.45);
   border-bottom: 1px solid rgba(40, 32, 24, 0.3);
-  height: clamp(130px, 15vw, 210px);
+  height: clamp(165px, 18.5vw, 255px);
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -304,22 +305,6 @@
   background-color: #8b261b;
   box-shadow: 0 -8px 24px rgba(20, 17, 15, 0.32);
   z-index: 10;
-}
-
-.mastheadArtworkBg {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  z-index: 0;
-  overflow: hidden;
-}
-
-.mastheadArtworkImg {
-  object-fit: cover;
-  object-position: center 30%;
-  opacity: 0.32;
-  mix-blend-mode: multiply;
-  filter: contrast(1.2) brightness(0.85);
 }
 
 .mastheadText {
