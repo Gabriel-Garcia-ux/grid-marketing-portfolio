@@ -121,10 +121,10 @@ export default function MinhasEdicoesV2({ onSelectProject }: MinhasEdicoesV2Prop
 
         {/* Projetos em Destaque */}
         <div className={styles.featuredGrid}>
-          {featured.map((feat) => (
+          {featured.map((feat, index) => (
             <div
               key={feat.id}
-              className={styles.featuredCard}
+              className={`${styles.featuredCard} ${index === 0 ? styles.nomadCard : ""}`}
               onClick={() => feat.item && onSelectProject?.(feat.item)}
             >
               <div className={styles.badgeNumber}>{feat.id}</div>
@@ -142,36 +142,70 @@ export default function MinhasEdicoesV2({ onSelectProject }: MinhasEdicoesV2Prop
               <div className={styles.cardCategory}>{feat.category}</div>
             </div>
           ))}
+
+          {/* Mona Lisa sobreposta olhando e apontando para a foto de Gabriel (Print 5) */}
+          <div className={styles.monaLisaContainer} aria-hidden="true">
+            <Image
+              src="/imagens de obras para o background/imagens pro site/ChatGPT Image 2 de set. de 2026, 00_43_58.png"
+              alt="Mona Lisa apontando para Gabriel Garcia"
+              width={480}
+              height={720}
+              className={styles.monaLisaImg}
+              priority
+            />
+          </div>
         </div>
       </div>
 
-      {/* Barra de Filtros */}
+      {/* Barra de Filtros com o espaço vazio central para a passagem da Mona Lisa (Print 4) */}
       <div className={styles.filterBar}>
-        <button
+        <div className={styles.filterGroupLeft}>
+          <button
+            className={`${styles.filterTab} ${activeFilter === "EDIÇÃO DE VÍDEOS" ? styles.filterTabActive : ""}`}
+            onClick={() => setActiveFilter("EDIÇÃO DE VÍDEOS")}
+          >
+            EDIÇÃO DE VÍDEOS
+          </button>
+          <button
+            className={`${styles.filterTab} ${activeFilter === "CRIAÇÃO DE SITES" ? styles.filterTabActive : ""}`}
+            onClick={() => setActiveFilter("CRIAÇÃO DE SITES")}
+          >
+            CRIAÇÃO DE SITES
+          </button>
+        </div>
 
-          className={`${styles.filterTab} ${activeFilter === "EDIÇÃO DE VÍDEOS" ? styles.filterTabActive : ""}`}
-          onClick={() => setActiveFilter("EDIÇÃO DE VÍDEOS")}
-        >
-          EDIÇÃO DE VÍDEOS
-        </button>
-        <button
-          className={`${styles.filterTab} ${activeFilter === "CRIAÇÃO DE SITES" ? styles.filterTabActive : ""}`}
-          onClick={() => setActiveFilter("CRIAÇÃO DE SITES")}
-        >
-          CRIAÇÃO DE SITES
-        </button>
-        <button
-          className={`${styles.filterTab} ${activeFilter === "CRIAÇÃO DE IMAGENS" ? styles.filterTabActive : ""}`}
-          onClick={() => setActiveFilter("CRIAÇÃO DE IMAGENS")}
-        >
-          CRIAÇÃO DE IMAGENS
-        </button>
-        <button
-          className={`${styles.filterTab} ${activeFilter === "GROWTH MARKETING" ? styles.filterTabActive : ""}`}
-          onClick={() => setActiveFilter("GROWTH MARKETING")}
-        >
-          GROWTH MARKETING
-        </button>
+        {/* Espaço vazio central reservado conforme rascunho no Print 4 */}
+        <div className={styles.filterCenterSpacer} aria-hidden="true" />
+
+        <div className={styles.filterGroupRight}>
+          <button
+            className={`${styles.filterTab} ${activeFilter === "CRIAÇÃO DE IMAGENS" ? styles.filterTabActive : ""}`}
+            onClick={() => setActiveFilter("CRIAÇÃO DE IMAGENS")}
+          >
+            CRIAÇÃO DE IMAGENS
+          </button>
+          <button
+            className={`${styles.filterTab} ${activeFilter === "GROWTH MARKETING" ? styles.filterTabActive : ""}`}
+            onClick={() => setActiveFilter("GROWTH MARKETING")}
+          >
+            GROWTH MARKETING
+          </button>
+        </div>
+      </div>
+
+      {/* Masthead Monumental GRIDMARKETING com pontinha superior cortada e obra ao fundo (Print 2 & 3) */}
+      <div className={styles.mastheadWrapper}>
+        <div className={styles.mastheadArtworkBg} aria-hidden="true">
+          <Image
+            src="/imagens de obras para o background/imagens pro site/ChatGPT Image 1 de set. de 2026, 23_52_27.png"
+            alt=""
+            fill
+            className={styles.mastheadArtworkImg}
+          />
+        </div>
+        <h2 className={styles.mastheadText} aria-label="Grid Marketing">
+          GRIDMARKETING
+        </h2>
       </div>
     </section>
   );

@@ -8,13 +8,14 @@ export default function SobreMimV2() {
 
   return (
     <section id="sobre" className={styles.section}>
-      {/* Imagem de Fundo Artística Integrada */}
+      {/* Imagem de Fundo Artística Integrada — A Criação de Adão */}
       <div className={styles.bgWrapper} aria-hidden="true">
         <Image
-          src="/imagens de obras para o background/imagens pro site/ChatGPT Image 1 de set. de 2026, 23_46_05.png"
+          src="/imagens de obras para o background/imagens pro site/ChatGPT Image 1 de set. de 2026, 23_52_27.png"
           alt=""
           fill
           className={styles.bgImage}
+          priority
         />
         <div className={styles.bgOverlay} />
       </div>
